@@ -12,6 +12,7 @@
 * Ative o virtualenv.
 * Instale as dependências.
 * Rode as migrações.
+* Criar o super user
 
 ```
 git clone https://github.com/marcelovieiratecnologia/mvtec.git
@@ -19,8 +20,11 @@ cd mvtec
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python contrib/env_gen.py
+python manage.py makemigrarations
 python manage.py migrate
+python manage.py createsuperuser
+
+
 ```
 ## Acessar o admin!
 http://127.0.0.1:8000/admin
